@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cart</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="../images/icons.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../styles/index.css" />
+
+    <style>
+      .cart-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cart-item img {
+        max-width: 100px;
+      }
+      .cart-item-details {
+        flex: 1;
+        padding-left: 10px;
+      }
+
+      .cart-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px; /* Adjust this value to control the separation */
+      }
+
+      .cart-items,
+      .checkout-summary {
+        flex: 1; /* Ensures both sections are of equal width */
+        border: 1px solid #ddd; /* Border color for both sections */
+        border-radius: 8px;
+      }
+
+      .cart-items {
+        padding: 20px;
+      }
+
+      .checkout-summary {
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+
+      .total,
+      .subtotal,
+      .shipping {
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .btn-delete,
+      #checkout-btn {
+        background-color: #061f45;
+        color: white;
+      }
+      .btn-delete:hover,
+      #checkout-btn:hover {
+        opacity: 0.7;
+        background-color: #061f45;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAR BAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+      <div class="container">
+        <img
+          src="../images/logo-shop.png"
+          class="img-fluid"
+          width="100px"
+          alt="shop logo"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/products.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="cart.html"
+                id="cart-icon"
+                style="color: #ca7c23"
+                ><i class="fa-solid fa-cart-shopping"></i
+                ><span id="cart-count" class="badge cart-num">0</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAR BAR -->
+
+    <!-- CART -->
+    <section id="cart" class="my-5 py-5">
+      <div class="container mt-5 pt-5 cart-container">
+        <div class="cart-items">
+          <h2 class="mb-4">Shopping Cart</h2>
+          <div id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+          </div>
+        </div>
+        <div class="checkout-summary">
+          <h4>Order Summary</h4>
+          <p class="subtotal">Subtotal: $<span id="subtotal">0.00</span></p>
+          <p class="shipping">Shipping: $<span id="shipping">5.00</span></p>
+          <p class="total">Total: $<span id="total">5.00</span></p>
+          <a href="checkout.html" class="btn mt-3 w-100" id="checkout-btn"
+            >Proceed to Checkout</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- END CART -->
+
+    <!-- FOOTER -->
+    <footer class="mt-5 py-5">
+      <div class="row container mx-auto pt-5">
+        <div class="footer-one col-lg-3 col-md-6 col-12">
+          <img
+            src="../images/logo-shop.png"
+            class="img-fluid"
+            width="100px"
+            alt="logo shop"
+          />
+          <p class="pt-3">
+            ShopEase offers a wide range of products to suit your needs. Our
+            commitment is to provide exceptional service and quality products.
+            Explore our collections today!
+          </p>
+        </div>
+        <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+          <h5 class="pb-2">Features</h5>
+          <ul class="text-uppercase list-unstyled">
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Jewelery</a></li>
+            <li><a href="#">Electronics</a></li>
+          </ul>
+        </div>
+        <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+          <h5 class="pb-2">Contact Us</h5>
+          <div>
+            <h6 class="text-uppercase">Adress</h6>
+            <p>Address: 9 Christiana Aryeetey Street</p>
+          </div>
+          <div>
+            <h6 class="text-uppercase">Phone</h6>
+            <p><a href="tel:+233599977509" class="a-link">+233 599977509</a></p>
+          </div>
+          <div>
+            <h6 class="text-uppercase">Email</h6>
+            <p>
+              <a href="mailto:broniezekiel0@gmail.com" class="a-link"
+                >broniezekiel0@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-one col-lg-3 col-md-6 col-12">
+          <h5 class="pb-2">Instagram</h5>
+          <div class="row">
+            <img
+              src="../images/insta2.jpg"
+              class="img-fluid w-25 h-100 m-2"
+              alt=""
+            />
+            <img
+              src="../images/insta3.jpg"
+              class="img-fluid w-25 h-100 m-2"
+              alt=""
+            />
+            <img
+              src="../images/insta4.jpg"
+              class="img-fluid w-25 h-100 m-2"
+              alt=""
+            />
+            <img
+              src="../images/insta5.jpg"
+              class="img-fluid w-25 h-100 m-2"
+              alt=""
+            />
+            <img
+              src="../images/insta6.jpg"
+              class="img-fluid w-25 h-100 m-2"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright mt-5">
+        <div class="row container mx-auto">
+          <div class="col-lg-3 col-md-6 col-12 mb-4">
+            <img src="../images/payment.png" alt="" />
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-2">
+            <p>ShopEasy eCommerce @ 2024. All Rights Reserved</p>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <a
+              href="https://www.facebook.com/profile.php?id=100076153312371&mibextid=JRoKGi"
+              target="_blank"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="https://x.com/ezekielbroni10" target="_blank"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/ezekiel_broni_?igsh=MTN1aXBkNzZ4dmg2Mg%3D%3D&utm_source=qr"
+              target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/ezekiel-broni-1abb04267"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--END FOOTER -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../js/cart.js"></script>
+  </body>
+</html>
