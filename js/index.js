@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (selectedProduct) {
                 localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
                 // Navigate to the correct path
-                window.location.href = '../pages/product_details.html';
+                window.location.href = './pages/product_details.html';
             }
         }
     }

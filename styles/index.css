@@ -76,6 +76,19 @@ a
   color: #ca7c23;
 }
 
+.navbar-light .navbar-toggler {
+  border: none !important;
+  outline: none !important;
+}
+
+#bar {
+  font-size: 1.5rem;
+  padding: 7px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: black;
+}
+
 a .nav-link i {
   font-size: 1.2rem;
   cursor: pointer;
