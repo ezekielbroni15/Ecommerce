@@ -13,7 +13,6 @@ body {
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  /* color: #f9f9f9; */
 }
 
 h2 {
@@ -49,6 +48,8 @@ p {
 a {
   text-decoration: none !important;
 }
+
+/* Nav Bar */
 
 .navbar {
   font-size: 16px;
@@ -100,6 +101,8 @@ a .nav-link i {
   -o-transition: 0.6s ease;
 }
 
+/* Hero */
+
 #hero .color1,
 col {
   color: #061f45;
@@ -109,7 +112,8 @@ col {
   color: #ca7c23;
 }
 
-button, .banner-btn {
+button,
+.banner-btn {
   font-size: 0.8rem;
   font-weight: 700;
   outline: none;
@@ -151,6 +155,8 @@ hr {
   font-size: 0.8rem;
   color: goldenrod;
 }
+
+/* Features */
 
 #features .rw1 img {
   width: 100%;
@@ -239,8 +245,8 @@ hr {
 
 .product img {
   transition: 0.3s all;
-  height: 250px; /* Set a fixed height */
-  object-fit: contain; /* Ensure the image covers the set height */
+  height: 250px;
+  object-fit: contain;
   background-position: center;
 }
 
@@ -263,7 +269,7 @@ hr {
 .product .star,
 .product .p-name,
 .product .p-price {
-  min-height: 50px; /* Adjust as necessary for text alignment */
+  min-height: 50px;
 }
 
 #banner {
@@ -341,6 +347,8 @@ hr {
   margin-bottom: 10px;
 }
 
+/* Footer */
+
 footer {
   background-color: #222222;
 }
@@ -355,12 +363,14 @@ footer li {
   padding-bottom: 4px;
 }
 
-footer li a, .a-link {
+footer li a,
+.a-link {
   font-size: 0.8rem;
   color: #999 !important;
 }
 
-footer li a:hover, .a-link:hover{
+footer li a:hover,
+.a-link:hover {
   color: #d8d8d8;
 }
 
@@ -387,12 +397,14 @@ footer .copyright a:hover {
   background-color: #ca7c23;
 }
 
+/* Contact */
 #contact .form-control:focus {
   box-shadow: none;
 }
 .cart-num {
   background-color: #061f45;
 }
+
 @media only screen and (max-width: 991px) {
   #navbarSupportedContent > ul {
     margin: 1rem;

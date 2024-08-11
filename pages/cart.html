@@ -44,24 +44,27 @@
 
       .cart-container {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 30px; /* Adjust this value to control the separation */
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      @media (min-width: 768px) {
+        .cart-container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
       }
 
       .cart-items,
       .checkout-summary {
-        flex: 1; /* Ensures both sections are of equal width */
-        border: 1px solid #ddd; /* Border color for both sections */
+        flex: 1;
+        border: 1px solid #ddd;
         border-radius: 8px;
-      }
-
-      .cart-items {
         padding: 20px;
       }
 
       .checkout-summary {
-        padding: 20px;
         background-color: #f9f9f9;
       }
 
@@ -108,7 +111,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="../index.html">Home</a>
             </li>
@@ -271,7 +274,7 @@
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4JQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"
     ></script>
     <script

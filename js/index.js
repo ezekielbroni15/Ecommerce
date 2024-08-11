@@ -237,7 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const selectedProduct = products.find(product => product.id == productId);
             if (selectedProduct) {
                 localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
-                // Navigate to the correct path
                 window.location.href = './pages/product_details.html';
             }
         }
